@@ -2,10 +2,11 @@ extends layout
 
 block content
   h1= title
+  button(onclick="location.href = '/new'" class="new-message" value="New Message") New Message
   div(class="message-board")
     each message in messages 
-      div(class="message-header")
-        div= message.user
-        div= message.added
-      div= message.text
-  a(href="/new") New Message
+      div(class="message")
+        div(class="message-header")
+          div= message.user
+          div= message.added
+        div= message.text

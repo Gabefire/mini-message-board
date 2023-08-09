@@ -1,8 +1,12 @@
-- const author = "Author's Name:"
+extends layout
 
-form(method="POST", action="/new")
-    label(for="author-name") #{author}
-        input(type="text", id="author-name" name="authorName")
-    label(for="text") Text:
-        input(type="text", id="text" name="messageText")
-    input(type="submit", value="submit") 
+block content
+    - const author = "Author's Name:"
+    form(method="POST", action="/new" class="new-message-form")
+        h1 Mini Message Board
+        div(class="inputs")
+            label(for="author-name") #{author}
+                input(type="text", id="author-name" name="authorName" class="input")
+            label(for="text") Text:
+                input(type="text", id="text" name="messageText" class="input")
+        input(type="submit", value="submit" class="new-message") 
